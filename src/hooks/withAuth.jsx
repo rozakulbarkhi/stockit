@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import cookie from "js-cookie";
 import { useEffect } from "react";
-import toast from "react-hot-toast";
 
 const withAuth = (WrappedComponent) => {
   const Wrapper = (props) => {
