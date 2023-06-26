@@ -54,7 +54,6 @@ const Login = () => {
         localStorage.setItem("user", JSON.stringify(response.data.data.user));
 
         cookie.set("token", response.data.data.token, { expires: 1 / 24 });
-        navigate("/dashboard");
         window.location.reload();
       }
     } catch (err) {
