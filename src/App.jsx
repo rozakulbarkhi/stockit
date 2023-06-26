@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
     element: <Table />,
   },
   {
-    path: "*",
+    path: "/*",
     element: <NotFound />,
   },
 ]);
