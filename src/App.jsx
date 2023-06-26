@@ -6,7 +6,7 @@ import NotFound from "./404";
 // eslint-disable-next-line react-refresh/only-export-components
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/auth",
     element: <Login />,
   },
   {
