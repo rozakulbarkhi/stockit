@@ -12,7 +12,7 @@ const withAuth = (WrappedComponent) => {
 
       if (!token) {
         localStorage.removeItem("user");
-        navigate("https://stock-it.vercel.app/");
+        navigate("/");
       }
     }, [navigate]);
 
