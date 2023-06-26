@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import toast from "react-hot-toast";
 import cookie from "js-cookie";
 
@@ -10,13 +10,11 @@ const Login = () => {
     password: "",
   });
 
-  const navigate = useNavigate();
-
   useEffect(() => {
     if (cookie.get("token")) {
-      navigate("/dashboard");
+      redirect("/dashboard");
     }
-  }, [navigate]);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
