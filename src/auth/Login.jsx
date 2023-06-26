@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import cookie from "js-cookie";
 
@@ -10,11 +10,13 @@ const Login = () => {
     password: "",
   });
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (cookie.get("token")) {
-      redirect("/dashboard");
+      navigate("/dashboard");
     }
-  }, []);
+  }, [navigate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -51,9 +53,8 @@ const Login = () => {
 
         localStorage.setItem("user", JSON.stringify(response.data.data.user));
 
-        // set token to cookie and expire in 1 hour
         cookie.set("token", response.data.data.token, { expires: 1 / 24 });
-        redirect("/dashboard");
+        navigate("/dashboard");
         window.location.reload();
       }
     } catch (err) {
