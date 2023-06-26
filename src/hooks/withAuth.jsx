@@ -12,7 +12,7 @@ const withAuth = (WrappedComponent) => {
 
       if (!token) {
         localStorage.removeItem("user");
-        navigate("/auth");
+        navigate("/");
       }
     }, [navigate]);
 
