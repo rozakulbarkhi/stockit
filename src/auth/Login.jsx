@@ -53,7 +53,7 @@ const Login = () => {
 
         // set token to cookie and expire in 1 hour
         cookie.set("token", response.data.data.token, { expires: 1 / 24 });
-        navigate("/dashboard");
+        redirect("/dashboard");
         window.location.reload();
       }
     } catch (err) {
