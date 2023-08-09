@@ -29,7 +29,7 @@ const Table = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios(
-        "https://api-stockit.up.railway.app/api/products",
+        `${import.meta.env.VITE_APP_API_URL}/products`,
         {
           method: "GET",
           headers: {

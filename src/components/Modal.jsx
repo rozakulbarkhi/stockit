@@ -22,7 +22,7 @@ const Modal = ({ name, onClose }) => {
       const formData = new FormData(e.target);
 
       const response = await axios(
-        "https://api-stockit.up.railway.app/api/products",
+        `${import.meta.env.VITE_APP_API_URL}/products`,
         {
           method: "POST",
           headers: {
@@ -150,7 +150,7 @@ const ModalDelete = ({ name, onClose, selectedId }) => {
 
     try {
       const response = await axios(
-        `https://api-stockit.up.railway.app/api/products/${selectedId}`,
+        `${import.meta.env.VITE_APP_API_URL}/products/${selectedId}`,
         {
           method: "DELETE",
           headers: {
@@ -227,7 +227,7 @@ const ModalEdit = ({ name, onClose, selectedId, setSelectedId }) => {
       const formData = new FormData(e.target);
 
       const response = await axios(
-        `https://api-stockit.up.railway.app/api/products/${selectedId._id}`,
+        `${import.meta.env.VITE_APP_API_URL}/products/${selectedId._id}`,
         {
           method: "PUT",
           headers: {

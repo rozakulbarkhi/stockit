@@ -32,7 +32,7 @@ const Login = () => {
 
     try {
       const response = await axios(
-        "https://api-stockit.up.railway.app/api/users/login",
+        `${import.meta.env.VITE_APP_API_URL}/users/login`,
         {
           method: "POST",
           data,
